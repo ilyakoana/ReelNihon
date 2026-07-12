@@ -69,7 +69,7 @@ Most Japanese learning apps teach textbook Japanese. ReelNihon is built around o
 
 **1. Clone the repo**
 ```bash
-git clone https://github.com/yourusername/reel-nihon.git
+git clone https://github.com/illiakoana/reel-nihon.git
 cd reel-nihon
 ```
 
