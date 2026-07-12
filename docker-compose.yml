@@ -1,0 +1,41 @@
+services:
+  backend:
+    build: ./backend
+    container_name: reelnihon-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data/media:/data/media
+      - ./data/db:/data/db
+    networks:
+      - reelnihon-net
+
+  frontend:
+    build: ./frontend
+    container_name: reelnihon-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "9990:80"
+    networks:
+      - reelnihon-net
+
+  bot:
+    build: ./bot
+    container_name: reelnihon-bot
+    restart: unless-stopped
+    depends_on:
+      - backend
+    env_file:
+      - .env
+    volumes:
+      - ./data/media:/data/media
+      - ./bot/cookies.txt:/app/cookies.txt
+    networks:
+      - reelnihon-net
+
+networks:
+  reelnihon-net:
+    driver: bridge

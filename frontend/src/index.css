@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #0D0D0D;
+  --bg-card: #1A1A2E;
+  --bg-card-hover: #1f1f3a;
+  --bg-input: #222236;
+  --text: #E8E0D0;
+  --text-muted: #8A8A9A;
+  --text-dim: #555568;
+  --accent: #FF4757;
+  --accent-dim: rgba(255, 71, 87, 0.15);
+  --correct: #4ECDC4;
+  --correct-dim: rgba(78, 205, 196, 0.15);
+  --wrong: #FF6B6B;
+  --wrong-dim: rgba(255, 107, 107, 0.15);
+  --border: #2D2D2D;
+  --border-light: #3a3a4a;
+  --nav-height: 64px;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Texto japonés siempre con Noto Sans JP */
+.jp {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
+
+/* Markdown en summary */
+.markdown h1, .markdown h2, .markdown h3 {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  margin: 1.2em 0 0.5em;
+  font-weight: 500;
+}
+.markdown h1 { font-size: 1.2rem; }
+.markdown h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+.markdown h3 { font-size: 0.95rem; color: var(--text-muted); }
+.markdown p { margin: 0.6em 0; color: var(--text); }
+.markdown ul, .markdown ol { padding-left: 1.2em; margin: 0.5em 0; }
+.markdown li { margin: 0.3em 0; }
+.markdown strong { color: var(--accent); font-weight: 600; }
+.markdown em { color: var(--correct); font-style: normal; font-weight: 500; }
+.markdown code {
+  font-family: 'Noto Sans JP', monospace;
+  background: var(--bg-input);
+  color: var(--correct);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.markdown blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1em;
+  color: var(--text-muted);
+  margin: 0.8em 0;
+}
